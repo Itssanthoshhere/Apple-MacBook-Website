@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/regular.otf");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("/fonts/medium.otf");
+}
+
+@font-face {
+  font-family: "SemiBold";
+  src: url("/fonts/semibold.otf");
+}
+
+@font-face {
+  font-family: "Bold";
+  src: url("/fonts/bold.otf");
+}
+
+* {
+  scrollbar-color: var(--color-dark-100) var(--color-black);
+}
+
+:root {
+  --gradient-color: linear-gradient(
+    to bottom right,
+    #0894ff 0%,
+    #c959dd 34%,
+    #ff2e54 68%,
+    #ff9004
+  );
+}
+
+@theme {
+  --font-regular: "Regular";
+  --font-medium: "Medium";
+  --font-semibold: "SemiBold";
+  --font-bold: "Bold";
+  --color-primary: #0071e3;
+  --color-dark-100: #86868b;
+  --color-dark-200: #2e2e30;
+  --color-light-100: #adb5bd;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #000;
+  color: var(--color-dark-100);
+  font-family: var(--font-semibold);
+}
+
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+
+@utility col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility h3-semibold {
+  @apply font-semibold text-xl text-dark-100;
+}
+
+@utility base-semibold {
+  @apply font-semibold text-base text-dark-100;
+}
+
+@utility small-medium {
+  @apply font-medium text-xs;
+}
