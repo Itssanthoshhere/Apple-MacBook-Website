@@ -1,10 +1,22 @@
 import { navLinks } from "../constants";
 
 const NavBar = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // smooth scrolling
+    });
+  };
+
   return (
     <header>
       <nav>
-        <img src="/logo.svg" alt="Apple logo" />
+        <img
+          src="/logo.svg"
+          alt="Apple logo"
+          className="cursor-pointer"
+          onClick={scrollToTop}
+        />
 
         <ul>
           {navLinks.map(({ label }) => (
@@ -14,7 +26,7 @@ const NavBar = () => {
           ))}
         </ul>
 
-        <div className="flex-center gap-3">
+        <div className="gap-3 flex-center">
           <button>
             <img src="/search.svg" alt="Search" />
           </button>
@@ -26,4 +38,5 @@ const NavBar = () => {
     </header>
   );
 };
+
 export default NavBar;
