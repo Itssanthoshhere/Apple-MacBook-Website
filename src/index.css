@@ -276,10 +276,10 @@ body {
   }
 
   #features {
-    @apply pt-40 relative;
+    @apply relative pt-40;
 
     h2 {
-      @apply text-white font-semibold text-3xl lg:text-7xl text-center max-w-3xl mx-auto;
+      @apply max-w-3xl mx-auto text-3xl font-semibold text-center text-white lg:text-7xl;
     }
 
     #f-canvas {
@@ -287,10 +287,114 @@ body {
     }
 
     .box {
-      @apply max-w-xs absolute;
+      @apply absolute max-w-xs;
 
       p {
         @apply lg:h3-semibold base-semibold;
+      }
+    }
+  }
+
+  #highlights {
+    @apply container mx-auto lg:py-40 max-lg:px-5;
+
+    h2 {
+      @apply max-w-3xl mx-auto text-3xl font-semibold text-center text-white lg:text-7xl;
+    }
+
+    h3 {
+      @apply text-[#F5F5F7] font-semibold text-xl lg:text-3xl text-center mt-10;
+    }
+
+    .masonry {
+      @apply grid grid-cols-1 lg:grid-cols-2 gap-5 mt-20 text-[#F5F5F7];
+
+      .left-column {
+        @apply flex flex-col justify-between gap-5 -translate-y-5 opacity-0;
+
+        div:first-of-type {
+          @apply h-full bg-[url(/highlight-bg.png)] bg-no-repeat bg-cover p-10 2xl:pt-32 lg:pt-20 rounded-3xl;
+
+          p {
+            @apply text-4xl font-semibold max-w-2xs;
+          }
+        }
+
+        p {
+          @apply text-4xl font-semibold max-w-2xs;
+        }
+
+        div:last-of-type {
+          @apply bg-[#1D1D1F] p-10 rounded-3xl flex items-center gap-7;
+
+          p {
+            @apply font-semibold lg:text-2xl 2xl:text-3xl;
+          }
+        }
+      }
+
+      .right-column {
+        @apply flex flex-col justify-between gap-5 -translate-y-5 opacity-0;
+
+        p {
+          @apply text-4xl font-semibold max-w-2xs;
+        }
+        .apple-gradient {
+          @apply relative flex items-center p-10 rounded-3xl gap-7;
+
+          background: #1d1d1f;
+          background-clip: padding-box; /* !important */
+          border: 3px solid transparent; /* !important */
+
+          ::before {
+            content: "";
+            pointer-events: none;
+            position: absolute;
+            inset: 0px;
+            z-index: -1;
+            margin: -5px; /* !important */
+            border-radius: 24px; /* !important */
+            background: linear-gradient(
+              91deg,
+              #0096ff 0%,
+              #bb64ff 42%,
+              #f2416b 74%,
+              #eb7500 100%
+            );
+          }
+
+          p {
+            @apply font-semibold lg:text-2xl 2xl:text-3xl;
+
+            span {
+              background: linear-gradient(
+                91deg,
+                #0096ff 0%,
+                #bb64ff 42%,
+                #f2416b 74%,
+                #eb7500 100%
+              );
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        div:last-of-type {
+          @apply h-full bg-[#1D1D1F] p-10 2xl:pt-32 lg:pt-20 rounded-3xl;
+
+          p {
+            @apply max-w-sm text-4xl font-semibold;
+
+            .green-gradient {
+              background: linear-gradient(90deg, #35a98a 0%, #6dd400 100%);
+              background-clip: text;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
       }
     }
   }
