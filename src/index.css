@@ -398,4 +398,36 @@ body {
       }
     }
   }
+
+  footer {
+    @apply container mx-auto py-7 max-lg:px-5;
+
+    .info {
+      @apply flex-between;
+
+      p {
+        @apply text-sm font-medium;
+
+        span {
+          @apply text-primary mx-0.5;
+        }
+      }
+    }
+
+    hr {
+      @apply my-7 text-[#424245];
+    }
+
+    .links {
+      @apply flex flex-col justify-between gap-5 text-sm lg:flex-row lg:items-center max-lg:mt-5;
+
+      ul {
+        @apply lg:divide-x flex flex-col lg:flex-row gap-2.5;
+
+        li {
+          @apply transition-all duration-300 ease-in-out cursor-pointer lg:px-5 hover:text-primary;
+        }
+      }
+    }
+  }
 }
